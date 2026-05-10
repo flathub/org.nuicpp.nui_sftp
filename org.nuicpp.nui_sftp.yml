@@ -53,10 +53,7 @@ modules:
         tag: v3.1.1
 
   - name: nlohmann-json
-    buildsystem: simple
-    build-commands:
-      - cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app
-      - cmake --build build --target install
+    buildsystem: cmake-ninja
     sources:
       - type: git
         url: https://github.com/nlohmann/json.git
