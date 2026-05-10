@@ -79,7 +79,6 @@ modules:
         INSTALL_TARGET: /app
         Boost_ROOT: /app
         BUILD_DIRECTORY: build/flatpak
-        PKG_CONFIG_PATH: /app/usr/lib/pkgconfig
       append-path: "/usr/lib/sdk/llvm21/bin:/usr/lib/sdk/node24/bin"
       prepend-ld-library-path: "/usr/lib/sdk/llvm21/lib"
       # build-args:
