@@ -35,12 +35,13 @@ modules:
   - name: libssh
     buildsystem: simple
     build-commands:
-      - cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app
+      - cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app -DWITH_EXAMPLES=OFF
       - cmake --build build --target install
     sources:
       - type: git
         url: https://git.libssh.org/projects/libssh.git/
         tag: libssh-0.11.4
+        commit: ca9c055d7c78ce357346ac7c2b14047568d47aa1
 
   - name: interval-tree
     buildsystem: simple
@@ -51,6 +52,7 @@ modules:
       - type: git
         url: https://github.com/5cript/interval-tree.git
         tag: v3.1.1
+        commit: dab26b24cd1b163b5640cf6dd9d52968b3532869
 
   - name: nlohmann-json
     buildsystem: cmake-ninja
@@ -58,6 +60,7 @@ modules:
       - type: git
         url: https://github.com/nlohmann/json.git
         tag: v3.12.0
+        commit: 55f93686c01528224f448c19128836e7df245f72
 
   - name: nui-sftp-frontend
     buildsystem: simple
@@ -113,6 +116,7 @@ modules:
       - type: git
         url: https://github.com/5cript/nui-sftp
         tag: v1.1.0
+        commit: 6055e2749e77bb22bd70553fc433e013c75c7fd2
       - type: archive
         url: https://s3.g.s4.mega.io/jgemkib4a5fte35rktt5wxrwkw4ejk4ybemkf/nui-scp/icons.tar.gz
         sha256: 30ffa48c3a509e878db31a1e5d80376242852e34d9c2aa3b44d2e3d1da2ce32e
@@ -121,6 +125,7 @@ modules:
       - type: git
         url: https://github.com/5cript/nui-sftp-deploy
         tag: flatpak/1.1.0
+        commit: c13519e3a3db11401bcd203b4cab8971ebb178dc
         dest: deploy-meta
       - type: file
         url: https://s3.g.s4.mega.io/jgemkib4a5fte35rktt5wxrwkw4ejk4ybemkf/nui-scp/images/NUI-SFTP_Logo-01_nopad.svg
