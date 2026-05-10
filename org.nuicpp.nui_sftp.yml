@@ -6,7 +6,6 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.llvm21
   - org.freedesktop.Sdk.Extension.node24
 command: nui-sftp
-buildsystem: simple
 
 finish-args:
   - --share=network
