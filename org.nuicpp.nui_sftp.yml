@@ -59,21 +59,6 @@ modules:
         url: https://github.com/nlohmann/json.git
         tag: v3.12.0
 
-  - name: fmt
-    buildsystem: simple
-    build-commands:
-      - cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app
-      - cmake --build build --target install
-    sources:
-      - type: git
-        url: https://github.com/fmtlib/fmt.git
-        tag: 12.1.0
-    cleanup:
-      - '/include'
-      - '/lib64/libfmt.a'
-      - '/lib64/pkgconfig/fmt.pc'
-      - '/lib64/cmake/fmt'
-
   - name: nui-sftp-frontend
     buildsystem: simple
     build-commands:
