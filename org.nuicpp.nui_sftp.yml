@@ -105,6 +105,7 @@ modules:
       - cp dependencies/icons/os_folders/windows/11/folder_main.png /app/assets/icons/folder_main.png
       # Patch desktop file to rename icon "nui_sftp.svg" to "org.nuicpp.nui_sftp.svg"
       - sed -i 's/Icon=nui_sftp/Icon=org.nuicpp.nui_sftp/g' org.nuicpp.nui_sftp.desktop
+      - desktop-file-edit --set-icon=org.nuicpp.nui_sftp ../org.nuicpp.nui_sftp.desktop
       # Install AppStream metadata
       - install -Dm644 ../deploy-meta/org.nuicpp.nui_sftp.metainfo.xml /app/share/metainfo/org.nuicpp.nui_sftp.metainfo.xml
       # Install desktop file
