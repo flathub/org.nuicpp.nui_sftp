@@ -9,6 +9,7 @@ command: nui-sftp
 
 finish-args:
   - --share=network
+  - --share=ipc
   - --filesystem=host
   - --socket=wayland
   - --socket=fallback-x11
