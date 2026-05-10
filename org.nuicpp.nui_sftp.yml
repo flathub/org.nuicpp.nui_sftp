@@ -81,8 +81,8 @@ modules:
         BUILD_DIRECTORY: build/flatpak
       append-path: "/usr/lib/sdk/llvm21/bin:/usr/lib/sdk/node24/bin"
       prepend-ld-library-path: "/usr/lib/sdk/llvm21/lib"
-      # build-args:
-      #   - --share=network
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
     build-commands:
       - cmake
           -B build/flatpak
