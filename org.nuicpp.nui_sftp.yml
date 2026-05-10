@@ -106,7 +106,7 @@ modules:
       # Patch desktop file to rename icon "nui_sftp.svg" to "org.nuicpp.nui_sftp.svg"
       - sed -i 's/Icon=nui_sftp/Icon=org.nuicpp.nui_sftp/g' org.nuicpp.nui_sftp.desktop
       # Install AppStream metadata
-      - install -Dm644 org.nuicpp.nui_sftp.metainfo.xml /app/share/metainfo/org.nuicpp.nui_sftp.metainfo.xml
+      - install -Dm644 ../deploy-meta/org.nuicpp.nui_sftp.metainfo.xml /app/share/metainfo/org.nuicpp.nui_sftp.metainfo.xml
       # Install desktop file
       - install -Dm644 org.nuicpp.nui_sftp.desktop /app/share/applications/org.nuicpp.nui_sftp.desktop
       # Image
@@ -120,8 +120,10 @@ modules:
         sha256: 30ffa48c3a509e878db31a1e5d80376242852e34d9c2aa3b44d2e3d1da2ce32e
         dest: 'dependencies/icons'
         strip-components: 0
-      - type: file
-        path: org.nuicpp.nui_sftp.metainfo.xml
+      - type: git
+        url: https://github.com/5cript/nui-sftp-deploy
+        tag: flatpak/1.1.0
+        dest: deploy-meta
       - type: file
         url: https://s3.g.s4.mega.io/jgemkib4a5fte35rktt5wxrwkw4ejk4ybemkf/nui-scp/images/NUI-SFTP_Logo-01_nopad.svg
         sha256: cf0fc442069dfd28bd8b7769da6dfdca92111044ea9817197716ed9bfada3869
