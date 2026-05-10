@@ -16,6 +16,10 @@ finish-args:
   - --socket=ssh-auth
   - --device=dri
 
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
 
 modules:
   - name: boost
@@ -27,10 +31,6 @@ modules:
       - type: archive
         url: https://archives.boost.io/release/1.90.0/source/boost_1_90_0.tar.gz
         sha256: 5e93d582aff26868d581a52ae78c7d8edf3f3064742c6e77901a1f18a437eea9
-    cleanup:
-      - '/lib/cmake/boost*'
-      - '/include'
-
 
   - name: libssh
     buildsystem: simple
@@ -41,10 +41,6 @@ modules:
       - type: git
         url: https://git.libssh.org/projects/libssh.git/
         tag: libssh-0.11.4
-    cleanup:
-      - '/include'
-      - '/lib64/pkgconfig/libssh.pc'
-      - '/lib64/cmake/libssh'
 
   - name: interval-tree
     buildsystem: simple
@@ -55,8 +51,6 @@ modules:
       - type: git
         url: https://github.com/5cript/interval-tree.git
         tag: v3.1.1
-    cleanup:
-      - '/include'
 
   - name: nlohmann-json
     buildsystem: simple
@@ -67,8 +61,6 @@ modules:
       - type: git
         url: https://github.com/nlohmann/json.git
         tag: v3.12.0
-    cleanup:
-      - '/include'
 
   - name: fmt
     buildsystem: simple
