@@ -1,10 +1,10 @@
 id: org.nuicpp.nui_sftp
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 # zypak, which Chromium's sandbox needs inside Flatpak.
 base: org.electronjs.Electron2.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.llvm22
   - org.freedesktop.Sdk.Extension.node24
@@ -126,7 +126,7 @@ modules:
       - type: git
         url: https://github.com/5cript/nui-sftp-deploy
         tag: flatpak/1.8.0
-        commit: bdc23e6ff763f5c8ececbb8c62dfb80bb80f9ebf
+        commit: c2bd2395213bc2cfb502211ee183191dc8bbac7f
         disable-submodules: true
         dest: deploy-meta
       - type: file
